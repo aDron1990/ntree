@@ -2,7 +2,6 @@
 
 #include <vector>
 
-
 template <typename T>
 class ntree_node
 {
@@ -64,16 +63,9 @@ public:
                         return *this;
                     }
                 }
-
-                if (current_i.empty())
-                {
-                    
-                }
-                
                 current_i.pop_back();
                 current_i.back()++;
                 current_i.push_back(0);
-
                 auto b = current_i[current_i.size() - 2];
                 current_ = current_->parent_->children_[b];
                 return *this;
