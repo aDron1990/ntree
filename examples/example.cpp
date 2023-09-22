@@ -48,12 +48,12 @@ int main()
     }
     //calculate sum of all tree elements using std::accumulate
     int sum = std::accumulate(root.begin(), root.end(), 0);
-    std::cout << sum << std::endl;         //ntree_node<T>::end() is valid for any ntree_node<T> object, 
-                                                                                    //because it is a ntree_node<T>::recursive_iterator{ nullptr }
+    std::cout << sum << std::endl;          //ntree_node<T>::end() is valid for any ntree_node<T> object, 
+                                            //because it is a ntree_node<T>::recursive_iterator{ nullptr }
     //calculate sum of tree[1] subtree elements using std::accumulate
     sum = std::accumulate(root[1].begin(), root[1].end(), 0);
-    std::cout << sum << std::endl;   //unstead of root[1].end() you can use root.end(), or any 
-                                                                                    //ntree_node<int>::recursive_iterator{ nullptr }
+    std::cout << sum << std::endl;          //unstead of root[1].end() you can use root.end(), or any 
+                                            //ntree_node<int>::recursive_iterator{ nullptr }
 
     return 0;
 }
