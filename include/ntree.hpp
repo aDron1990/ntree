@@ -2,7 +2,7 @@
 
 #include <vector>
 
-namespace forestcd
+namespace forest
 {
     template <typename T>
     class ntree
