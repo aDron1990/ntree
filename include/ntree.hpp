@@ -17,6 +17,7 @@ namespace forest
 
         class recursive_iterator
         {
+            friend class ntree;
         private:
 
             ntree<T>* root_;
@@ -114,7 +115,11 @@ namespace forest
         }
 
         ntree() {}
-        ~ntree() {}
+
+        ~ntree() 
+        {
+            
+        }
 
         ntree& operator[](int i)
         {
@@ -131,6 +136,16 @@ namespace forest
         T& operator*()
         {
             return data_;
+        }
+
+        void erase(recursive_iterator& node_it)
+        {
+            if (node_it.current_->children.size() > 0)
+            {
+                node_it.current_->parent->children_.push_back(node_it.current_->children);
+                node_it.current_->parent->children_.erase(std::find(node_it.current_->parent->children_.begin(), node_it.current_->parent->children_.end(), node_it.current_))
+                delete node_it.current;
+            }
         }
     };
 }
